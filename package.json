@@ -24,7 +24,22 @@
     "url": "https://github.com/Leko/otesuki/issues"
   },
   "homepage": "https://github.com/Leko/otesuki#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,yml,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {},
   "devDependencies": {
-    "lerna": "^3.4.0"
+    "husky": "^1.0.0-rc.15",
+    "lerna": "^3.4.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "1.14.3"
   }
 }
