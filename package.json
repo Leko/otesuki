@@ -1,0 +1,27 @@
+{
+  "name": "otesuki",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Minimal task queue executed when CPU is idle",
+  "scripts": {
+    "test": "lerna run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/otesuki.git"
+  },
+  "keywords": [
+    "requestIdleCallback",
+    "worker",
+    "task",
+    "queue",
+    "idle",
+    "cpu"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leko/otesuki/issues"
+  },
+  "homepage": "https://github.com/Leko/otesuki#readme"
+}
