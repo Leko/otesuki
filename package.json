@@ -5,6 +5,7 @@
   "description": "Minimal task queue executed when CPU is idle",
   "scripts": {
     "xpretest": "eslint packages/**/*.{ts,js}",
+    "release": "./scripts/release",
     "test": "lerna run test"
   },
   "repository": {
@@ -25,6 +26,16 @@
     "url": "https://github.com/Leko/otesuki/issues"
   },
   "homepage": "https://github.com/Leko/otesuki#readme",
+  "changelog": {
+    "labels": {
+      "Type: Breaking Change": "Breaking Change",
+      "Type: Feature": "Feature",
+      "Type: Bug": "Bug",
+      "Type: Maintenance": "Maintenance",
+      "Type: Documentation": "Documentation",
+      "Type: Refactoring": "Refactoring"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -46,12 +57,14 @@
     "@babel/preset-typescript": "^7.1.0",
     "@types/jest": "^23.3.2",
     "can-npm-publish": "^1.3.1",
+    "dotenv-cli": "^1.4.0",
     "eslint": "^5.6.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^2.6.2",
     "husky": "^1.0.0-rc.15",
     "jest": "^23.6.0",
     "lerna": "^3.4.0",
+    "lerna-changelog": "^0.8.0",
     "lint-staged": "^7.3.0",
     "prettier": "1.14.3",
     "rimraf": "^2.6.2",
