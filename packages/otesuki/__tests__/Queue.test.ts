@@ -80,3 +80,20 @@ test("onError should called when rejects executor", () => {
     queue.push(action);
   });
 });
+
+test("push can execute multiple tasks", () => {
+  const spy = jest.fn(() => {});
+  const action1 = { type: "foo", payload: { id: "xxx" } };
+  const action2 = { type: "bar", payload: { id: "yyy" } };
+  return new Promise(resolve => {
+    const queue = new Queue(spy);
+    queue.push(action1);
+    queue.push(action2);
+    // @ts-ignore
+    requestIdleCallback(() => {
+      expect(spy).nthCalledWith(1, action1);
+      expect(spy).nthCalledWith(2, action2);
+      resolve();
+    });
+  });
+});
