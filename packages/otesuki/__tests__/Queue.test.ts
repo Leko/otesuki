@@ -97,3 +97,21 @@ test("push can execute multiple tasks", () => {
     });
   });
 });
+
+test("Queue should output debug logs when option.debug=true", () => {
+  const spyLog = jest.spyOn(console, "log");
+  spyLog.mockImplementation(() => {});
+
+  const spy = jest.fn(() => Promise.reject(new Error("always rejects")));
+  return new Promise(resolve => {
+    const queue = new Queue(spy, {
+      debug: true,
+      onRetire: () => {
+        expect(console.log).toBeCalled();
+        resolve();
+      }
+    });
+    const action = { type: "hoge", payload: { id: "xxx" } };
+    queue.push(action);
+  });
+});
