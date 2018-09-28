@@ -1,6 +1,6 @@
 {
   "name": "otesuki",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Minimal task queue executed when CPU is idle",
   "keywords": [
     "requestIdleCallback",
