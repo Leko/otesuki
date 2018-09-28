@@ -1,0 +1,43 @@
+{
+  "name": "otesuki",
+  "version": "0.0.0",
+  "description": "Minimal task queue executed when CPU is idle",
+  "keywords": [
+    "requestIdleCallback",
+    "worker",
+    "task",
+    "queue",
+    "idle",
+    "cpu"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "homepage": "https://github.com/Leko/otesuki/tree/master/packages/otesuki#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/otesuki.git"
+  },
+  "scripts": {
+    "prepublishOnly": "upbin can-npm-publish",
+    "prepare": "upbin npm-run-all prepare:clean prepare:babel prepare:types",
+    "prepare:clean": "upbin rimraf dist",
+    "prepare:babel": "upbin babel --config-file ../../.babelrc src --extensions '.ts,.tsx' --out-dir dist",
+    "prepare:types": "upbin tsc --declarationDir ./dist && mv ./dist/src/* ./dist/ && rm -rf ./dist/{src,__tests__}",
+    "test": "npm run prepare && upbin jest"
+  },
+  "bugs": {
+    "url": "https://github.com/Leko/otesuki/issues"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.3",
+    "requestidlecallback": "^0.3.0",
+    "upbin": "^0.8.1"
+  }
+}
