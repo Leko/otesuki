@@ -72,6 +72,6 @@
     "ts-node": "^7.0.1",
     "tsc": "^1.20150623.0",
     "typescript": "^3.0.3",
-    "typescript-eslint-parser": "^19.0.1"
+    "typescript-eslint-parser": "^21.0.0"
   }
 }
